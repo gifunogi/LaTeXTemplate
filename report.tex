@@ -1,0 +1,67 @@
+\documentclass{jsarticle}
+\usepackage{listings}			% 行番号等のリスト作成をする
+\usepackage{jlisting}			% リストを日本語対応させる
+\usepackage{multicol}			% 部分的に2段組にする
+\usepackage[dvipdfmx]{graphicx}	% 図の挿入の補助
+\usepackage{here}				% ここに表示するの！
+\usepackage{amsmath,amssymb}    % 数学記号の補助
+\usepackage{ascmac}             % 枠付き文章
+\usepackage{url}				% url出力の補助
+% \usepackage{fancyhdr}         % ページ番号を右上に表示するとき
+% \pagestyle{fancy}
+% \lhead{}
+% \rhead{}
+% \rhead{\thepage{}}
+% \cfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+
+\makeatletter
+\renewcommand{\theequation}{	    % 式番号の付け方
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\renewcommand{\thefigure}{	        % 図番号の付け方
+\thesection.\arabic{figure}}
+\@addtoreset{figure}{section}
+\renewcommand{\thetable}{		    % 表番号の付け方
+\thesection.\arabic{table}}
+\@addtoreset{table}{section}
+\renewcommand{\refname}{}
+\AtBeginDocument{			    	% リスト番号の付け方
+\renewcommand*{\thelstlisting}{\arabic{section}.\arabic{lstlisting}}%
+\@addtoreset{lstlisting}{section}}
+\lstset{                            % listings の表示設定
+    breaklines = true,              % 自動で折り返す。
+    tabsize = 4,                    % インデントをスペースいくつで表すか
+    frame = single,                 % 枠を上下左右に表示する
+    basicstyle = \ttfamily\footnotesize,
+    numbers = left,	                % 行番号を左に
+    language = C                    % 言語設定
+}
+
+\makeatother	
+\begin{document}
+
+\title{タイトル}
+\author{著者}
+\date{平成YY年MM月DD日}
+\maketitle
+%\begin{multicols}{2}				% 2段組にするとき
+\section{セクション}
+\subsection{サブセクション}
+\subsubsection{サブサブセクション}
+\section{参考文献}
+\begin{thebibliography}{99}
+\bibitem{quadratic}資料名\url{***}
+\end{thebibliography}
+\section{付録}
+% ソースコード添付の例
+\input{./input/fib.tex}
+% 画像添付するとき
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=120mm]{./img/[ファイル名]}
+% \caption{画像キャプション}
+% \end{center}
+% \end{figure}
+
+\end{document}
