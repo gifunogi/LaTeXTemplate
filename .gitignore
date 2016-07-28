@@ -2,3 +2,5 @@
 *.gz
 *.dvi
 *.aux
+*.log
+*.vscodeLog

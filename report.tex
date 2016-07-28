@@ -5,8 +5,9 @@
 \usepackage[dvipdfmx]{graphicx}	% 図の挿入の補助
 \usepackage{here}				% ここに表示するの！
 \usepackage{amsmath,amssymb}    % 数学記号の補助
-\usepackage{ascmac}             % 枠付き文章
+\usepackage{ascmac}             % 枠付き文章の補助
 \usepackage{url}				% url出力の補助
+
 % \usepackage{fancyhdr}         % ページ番号を右上に表示するとき
 % \pagestyle{fancy}
 % \lhead{}
@@ -42,10 +43,11 @@
 \begin{document}
 
 \title{タイトル}
-\author{著者}
+\author{著者名}
 \date{平成YY年MM月DD日}
 \maketitle
-%\begin{multicols}{2}				% 2段組にするとき
+% \begin{multicols}{2}				% 2段組にするときはじめ
+% \end{multicols}{2}                % 2段組おわり
 \section{セクション}
 \subsection{サブセクション}
 \subsubsection{サブサブセクション}
@@ -55,7 +57,7 @@
 \end{thebibliography}
 \section{付録}
 % ソースコード添付の例
-\input{./input/fib.tex}
+\lstinputlisting[caption=フィボナッチ数出力プログラム, label=sec:fib]{./input/fib.c}
 % 画像添付するとき
 % \begin{figure}[H]
 % \begin{center}

@@ -1,4 +1,3 @@
-\begin{lstlisting}[caption=fib.c]
 #include <stdio.h>
 
 int fib(int n) {
@@ -17,4 +16,3 @@ int main() {
 
 	return 0;
 }
-\end{lstlisting}
